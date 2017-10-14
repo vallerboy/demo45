@@ -5,12 +5,25 @@
 </head>
 <body>
 <center><h1 th:text="${info}"></h1></center>
- <form th:if="${info} == null" action="/" method="post">
-     Dochod <input type="text" th:name="salary"/>
-     Koszty na mc <input type="text" th:name="costs"/>
-     Kredyt <input type="text" th:name="credit"/>
-     Okres kredytowania <input type="text" th:name="period"/>
-     <input type="submit" value="Slij"/>
+ <br/>
+
+ <!--<form th:if="${info} == null" action="/" method="post">-->
+     <!--Dochod <input type="text" th:name="salary"/>-->
+     <!--Koszty na mc <input type="text" th:name="costs"/>-->
+     <!--Kredyt <input type="text" th:name="credit"/>-->
+     <!--Okres kredytowania <input type="text" th:name="period"/>-->
+     <!--<input type="submit" value="Slij"/>-->
+ <!--</form>-->
+
+ <form th:if="${info} == null" th:object="${creditForm}" action="/" method="post">
+    Dochod <input type="text" th:field="*{salary}"/>
+    Koszty na mc <input type="text"  th:field="*{costs}" />
+    Kredyt <input type="text"  th:field="*{credit}" />
+    Okres kredytowania <input type="text"  th:field="*{period}" />
+    <input type="submit" value="Slij"/>
  </form>
+
+
+
 </body>
 </html>
