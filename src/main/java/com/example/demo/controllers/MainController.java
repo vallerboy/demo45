@@ -26,7 +26,7 @@ public class MainController {
 //    }
 
     @PostMapping("/")
-    public String bankTemaplate(@ModelAttribute CreditForm creditForm, Model model){
+    public String bankTemaplate(@ModelAttribute("creditForm") CreditForm creditForm, Model model){
                 model.addAttribute("info", checkCredit(
                         creditForm.getSalary(),
                         creditForm.getCosts(),

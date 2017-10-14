@@ -14,7 +14,9 @@ public class CreditForm {
         this.period = period;
     }
 
-    public CreditForm() {}
+    public CreditForm() {
+        salary = 555;
+    }
 
     public int getSalary() {
         return salary;
