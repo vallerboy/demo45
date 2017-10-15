@@ -5,6 +5,7 @@ import com.example.demo.models.forms.CreditForm;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 @Entity
@@ -18,9 +19,9 @@ public class CreditModel {
     private int credit;
     //@Column(name = "asdasd")
     private int period;
-    private Date date;
+    private LocalDateTime date;
 
-    public CreditModel(int salary, int costs, int credit, int period, Date date) {
+    public CreditModel(int salary, int costs, int credit, int period, LocalDateTime date) {
         this.salary = salary;
         this.costs = costs;
         this.credit = credit;
@@ -36,7 +37,7 @@ public class CreditModel {
         costs = form.getCosts();
         credit = form.getCredit();
         period = Integer.parseInt(form.getPeriod());
-        date = new Date(Calendar.getInstance().getTimeInMillis());
+        date = LocalDateTime.now();
     }
 
     public int getId() {
@@ -79,11 +80,11 @@ public class CreditModel {
         this.period = period;
     }
 
-    public Date getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 }
