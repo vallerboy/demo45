@@ -14,7 +14,7 @@ public class CreditForm {
     @Min(500)
     @Max(500000)
     private int credit;
-    @Pattern(regexp = "[1-9][0-9]{2}")
+    @Pattern(regexp = "[1-9][0-9]+")
     private String period;
 
 

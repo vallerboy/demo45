@@ -16,10 +16,14 @@
  <!--</form>-->
 
  <form th:if="${info} == null" th:object="${creditForm}" action="/" method="post">
-    Dochod <input type="text" th:field="*{salary}"/>
-    Koszty na mc <input type="text"  th:field="*{costs}" />
-    Kredyt <input type="text"  th:field="*{credit}" />
-    Okres kredytowania <input type="text"  th:field="*{period}" />
+     <p th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></p>
+     Dochod <input type="text" th:field="*{salary}"/>
+     <p th:if="${#fields.hasErrors('costs')}" th:errors="*{costs}"></p>
+     Koszty na mc <input type="text"  th:field="*{costs}" />
+     <p th:if="${#fields.hasErrors('credit')}" th:errors="*{credit}"></p>
+     Kredyt <input type="text"  th:field="*{credit}" />
+     <p th:if="${#fields.hasErrors('period')}" th:errors="*{period}"></p>
+     Okres kredytowania <input type="text"  th:field="*{period}" />
     <input type="submit" value="Slij"/>
  </form>
 

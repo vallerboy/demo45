@@ -3,7 +3,10 @@ package com.example.demo.controllers;
 import com.example.demo.models.forms.CreditForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 public class MainController {
@@ -26,8 +29,13 @@ public class MainController {
 //    }
 
     @PostMapping("/")
-    public String bankTemaplate(@ModelAttribute("creditForm") CreditForm creditForm, Model model){
-                model.addAttribute("info", checkCredit(
+    public String bankTemaplate(@ModelAttribute("creditForm") @Valid CreditForm creditForm, BindingResult result, Model model){
+
+        if(result.hasErrors()){
+            return "bankTemplate";
+        }
+
+        model.addAttribute("info", checkCredit(
                         creditForm.getSalary(),
                         creditForm.getCosts(),
                         creditForm.getCredit(),
