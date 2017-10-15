@@ -1,11 +1,13 @@
 package com.example.demo.models.forms;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 
 public class CreditForm {
-    @Min(0)
+    @Min(value = 0)
     @Max(Integer.MAX_VALUE)
     private int salary;
     @Min(0)
@@ -14,7 +16,8 @@ public class CreditForm {
     @Min(500)
     @Max(500000)
     private int credit;
-    @Pattern(regexp = "[1-9][0-9]+")
+    @NotBlank
+    @Pattern(regexp = "[1-9][0-9]*")
     private String period;
 
 

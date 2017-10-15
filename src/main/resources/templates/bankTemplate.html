@@ -15,6 +15,8 @@
      <!--<input type="submit" value="Slij"/>-->
  <!--</form>-->
 
+ <h1 th:text="#{asd}"></h1>
+
  <form th:if="${info} == null" th:object="${creditForm}" action="/" method="post">
      <p th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></p>
      Dochod <input type="text" th:field="*{salary}"/>
