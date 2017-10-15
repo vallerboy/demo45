@@ -87,4 +87,16 @@ public class CreditModel {
     public void setDate(LocalDateTime date) {
         this.date = date;
     }
+
+    @Override
+    public String toString() {
+        return "CreditModel{" +
+                "id=" + id +
+                ", salary=" + salary +
+                ", costs=" + costs +
+                ", credit=" + credit +
+                ", period=" + period +
+                ", date=" + date +
+                '}';
+    }
 }
