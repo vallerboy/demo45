@@ -31,7 +31,7 @@ public class MainController {
                         creditForm.getSalary(),
                         creditForm.getCosts(),
                         creditForm.getCredit(),
-                        creditForm.getPeriod()));
+                        Integer.valueOf(creditForm.getPeriod())));
 
         return "bankTemplate";
     }

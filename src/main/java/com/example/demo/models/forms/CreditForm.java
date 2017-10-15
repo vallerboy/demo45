@@ -1,13 +1,24 @@
 package com.example.demo.models.forms;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+
 public class CreditForm {
+    @Min(0)
+    @Max(Integer.MAX_VALUE)
     private int salary;
+    @Min(0)
+    @Max(Integer.MAX_VALUE)
     private int costs;
+    @Min(500)
+    @Max(500000)
     private int credit;
-    private int period;
+    @Pattern(regexp = "[1-9][0-9]{2}")
+    private String period;
 
 
-    public CreditForm(int salary, int costs, int credit, int period) {
+    public CreditForm(int salary, int costs, int credit, String period) {
         this.salary = salary;
         this.costs = costs;
         this.credit = credit;
@@ -42,11 +53,11 @@ public class CreditForm {
         this.credit = credit;
     }
 
-    public int getPeriod() {
+    public String getPeriod() {
         return period;
     }
 
-    public void setPeriod(int period) {
+    public void setPeriod(String period) {
         this.period = period;
     }
 
